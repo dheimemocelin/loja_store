@@ -73,3 +73,26 @@ h6 del {
 
 
 
+/* arquivo: static/estilos.css */
+
+/* Espaçamento personalizado para dispositivos móveis */
+@media (max-width: 767.98px) {
+    .mobile-space {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    }
+    .navbar-brand.mobile-center {
+        display: flex;
+        justify-content: center;
+      }
+    
+      .navbar-brand img {
+        margin: 0 auto;
+      }
+
+  }
+

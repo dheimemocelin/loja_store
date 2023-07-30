@@ -20,28 +20,23 @@
 <body>
     
 	<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
-        <div class="container-fluid">
-          <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0" href="/">
-        <img
-          src="{{url_for('static', filename='logo.png')}}"
-          height="50"
-          alt="Mocelin store"
-          loading="lazy"
-        />
+    <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0 d-flex mx-auto" href="/">
+          <img src="{{url_for('static', filename='logo.png')}}" height="50" alt="Mocelin store" loading="lazy" />
       </a>
-          <a class="navbar-brand" href="/"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a class="navbar-brand" href="/"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link" href="/"> Home </a></li>
+                <li class="nav-item"><a class="nav-link" href="/"> Home </a></li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Celulares</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Celulares</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="{{url_for('iphones')}}">Iphone</a></li>
-                      <li><a class="dropdown-item" href="{{url_for('samsung')}}">Samsung</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('iphones')}}">Iphone</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('samsung')}}">Samsung</a></li>
                     </ul>
                 </li>
 
@@ -51,12 +46,11 @@
                 <li class="nav-item"><a class="nav-link" href="{{url_for('smartwatch')}}">Smartwatch</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{url_for('audio')}}">Audio</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{url_for('games')}}">Games</a></li>
-
-              
             </ul>
-          </div>
         </div>
-      </nav>
+    </div>
+</nav>
+
       {% block conteudo %}
 
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -80,7 +74,7 @@
 
       <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mobile-space">
                 <div class="card" style="width: 18rem;">
                     <!-- Link para a página de smartwatches -->
                     <a href="{{url_for('smartwatch')}}">
@@ -89,7 +83,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mobile-space">
                 <div class="card" style="width: 18rem;">
                     <!-- Link para a página de áudio -->
                     <a href="{{url_for('audio')}}">
@@ -98,7 +92,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mobile-space">
                 <div class="card" style="width: 18rem;">
                     <!-- Link para a página de eletroportáteis -->
                     <a href="{{url_for('eletroportateis')}}">
@@ -137,7 +131,7 @@
 
         <div class="container">
           <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-4 mobile-space">
                   <div class="card" style="width: 18rem;">
                       <!-- Link para a página de smartwatches -->
                       <a href="{{url_for('games')}}">
@@ -146,7 +140,7 @@
                       </a>
                   </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 mobile-space">
                   <div class="card" style="width: 18rem;">
                       <!-- Link para a página de áudio -->
                       <a href="{{url_for('informatica')}}">
@@ -155,7 +149,7 @@
                       </a>
                   </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 mobile-space">
                   <div class="card" style="width: 18rem;">
                       <!-- Link para a página de eletroportáteis -->
                       <a href="{{url_for('tv')}}">
@@ -171,14 +165,8 @@
         </div>
     </div>
     
-    <div class="container">
-      <div class="row justify-content-center">
-          <div class="col-md-6">
-              <img src="{{url_for('static', filename='whats.png')}}" class="d-block mx-auto img-rounded" style="width: 900px; height: 200px; max-width: 100%;" alt="...">
-          </div>
-      </div>
-  </div>
   
+
   
 
 

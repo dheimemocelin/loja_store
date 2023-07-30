@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+
+{% block conteudo %}
+<div class="container">
+    <div class="row">
+        {% for i in range(data['titulo']|length) %}
+            <div class="col-md-3">
+                <div class="card">
+                    <br>
+                    <br>
+                    <img src="{{ data['image_urls'][i] }}" class="card-img-top" alt="Imagem do iPhone">
+                    <div class="card-body">
+                        <p class="card-text">{{ data['titulo'][i] }}</p>
+                        <h6><del>De: {{ data['original_prices'][i] }}</del></h6>
+                        <h4 class="card-title">Por: {{ data['current_prices'][i] }}</h4>
+                        <a href="{{ data['urls'][i] }}" class="btn btn-primary small-btn btn-custom" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-check-fill" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zm-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                            </svg> Ver mais detalhes
+                          </a>
+                          
+                    </div>
+                </div>
+            </div>
+            {% if loop.index % 4 == 0 %}
+                </div>
+                <div class="row">
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock conteudo %}

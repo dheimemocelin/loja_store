@@ -1,1 +1,2 @@
 # loja_store
+ok

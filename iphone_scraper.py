@@ -3,12 +3,13 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
+
 class Sit:
     def __init__(self, opcao):
         self.opcao = opcao
 
     def format_price(self, price):
-        # Implemente sua lógica para formatar o preço aqui, se necessário
+        # Implement your logic to format the price here, if necessary
         return price
 
     def celular(self):
@@ -20,12 +21,12 @@ class Sit:
             soup = BeautifulSoup(res.content, 'html.parser')
 
             dados_h2 = soup.find_all('div', attrs={'data-testid': 'mod-productlist'})
-            dados_link = soup.find_all('li', class_='sc-gQSkpc jFWfzG')
+            dados_link = soup.find_all('li', class_='sc-evdWiO ksMIx')
             dados_o = soup.find_all('p', attrs={'data-testid': ['price-original']})
             dados_p = soup.find_all('p', attrs={'data-testid': ['price-value']})
-            div_tags = soup.find_all('div', class_='sc-fwwElh bjQZYx')
+            div_tags = soup.find_all('div', class_='sc-jSoCLE gpCgsm')
 
-            data_dict = {'titulo': [],'urls': [], 'original_prices': [], 'current_prices': [], 'image_urls': []}
+            data_dict = {'titulo': [], 'urls': [], 'original_prices': [], 'current_prices': [], 'image_urls': []}
             
             for dado in dados_h2:
                 h2 = dado.find_all('h2')
@@ -50,6 +51,11 @@ class Sit:
                 if img_tag and 'src' in img_tag.attrs:
                     image_url = img_tag['src']
                     data_dict['image_urls'].append(image_url)
+
+            # Ensure all lists have the same length
+            max_length = max(map(len, data_dict.values()))
+            for key in data_dict:
+                data_dict[key] += [None] * (max_length - len(data_dict[key]))
 
             return data_dict
 

@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify
+from flask_sslify import SSLify
 from iphone_scraper import Sit
 from samsung import Site
 from informatica import Info

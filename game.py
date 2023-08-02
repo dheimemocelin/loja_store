@@ -19,11 +19,11 @@ class Game:
             res = requests.get(base_url, headers=headers)
             soup = BeautifulSoup(res.content, 'html.parser')
 
-            dados_h2 = soup.find_all('div', attrs={'data-testid': 'mod-productlist'})
-            dados_link = soup.find_all('li', class_='sc-gQSkpc jFWfzG')
+            dados_h2 = soup.find_all('div', attrs={'data-testid': 'product-card-content'})
+            dados_link = soup.find_all('li', class_='sc-evdWiO ksMIx')
             dados_o = soup.find_all('p', attrs={'data-testid': ['price-original']})
             dados_p = soup.find_all('p', attrs={'data-testid': ['price-value']})
-            div_tags = soup.find_all('div', class_='sc-fwwElh bjQZYx')
+            div_tags = soup.find_all('div', class_='sc-jSoCLE gpCgsm')
 
             data_dict = {'titulo': [],'urls': [], 'original_prices': [], 'current_prices': [], 'image_urls': []}
             

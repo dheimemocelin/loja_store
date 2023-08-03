@@ -21,7 +21,7 @@ class Sit:
             soup = BeautifulSoup(res.content, 'html.parser')
 
             dados_h2 = soup.find_all('div', attrs={'data-testid': 'mod-productlist'})
-            dados_link = soup.find_all('li', class_='sc-evdWiO ksMIx')
+            dados_link = soup.find_all('li', class_='sc-cvalOF iSkpZC')
             dados_o = soup.find_all('p', attrs={'data-testid': ['price-original']})
             dados_p = soup.find_all('p', attrs={'data-testid': ['price-value']})
             div_tags = soup.find_all('div', class_='sc-jSoCLE gpCgsm')

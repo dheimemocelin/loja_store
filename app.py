@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify
-from flask_sslify import SSLify
+from flask_talisman import Talisman
 from iphone_scraper import Sit
 from samsung import Site
 from informatica import Info
@@ -68,5 +68,8 @@ def games():
     return render_template('games.html', data=dict_iphone)
 
 
+talisman = Talisman(app)
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=80)

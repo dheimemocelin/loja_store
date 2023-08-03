@@ -1,5 +1,4 @@
-from flask import Flask, render_template, jsonify
-from flask_talisman import Talisman
+from flask import Flask, render_template
 from iphone_scraper import Sit
 from samsung import Site
 from informatica import Info
@@ -8,7 +7,7 @@ from eletroportateis import Eletro
 from smartwatch import Smart
 from audio import Audio
 from game import Game
-import random
+
 
 
 app = Flask(__name__)
@@ -68,8 +67,5 @@ def games():
     return render_template('games.html', data=dict_iphone)
 
 
-talisman = Talisman(app)
-
-
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=80)
+    app.run(debug=True)
